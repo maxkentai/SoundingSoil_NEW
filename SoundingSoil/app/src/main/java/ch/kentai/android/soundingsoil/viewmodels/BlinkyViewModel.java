@@ -52,7 +52,8 @@ import ch.kentai.android.soundingsoil.scanner.SimpleBluetoothDevice;
 import no.nordicsemi.android.log.LogSession;
 import no.nordicsemi.android.log.Logger;
 
-public class BlinkyViewModel extends AndroidViewModel implements BlinkyManagerCallbacks {
+public class
+BlinkyViewModel extends AndroidViewModel implements BlinkyManagerCallbacks {
 	private final BlinkyManager mBlinkyManager;
 	private BluetoothDevice mDevice;
 
@@ -260,6 +261,7 @@ public class BlinkyViewModel extends AndroidViewModel implements BlinkyManagerCa
 			unixTime += getCurrentTimezoneOffset();		// add time zone offset
 			mBlinkyManager.send("time " + unixTime);
 			mBlinkyManager.send("latlong " + latitude + " " + longitude);
+//			mBlinkyManager.send("latlong 47.39059 8.51245");
 			mBlinkyManager.send("rwin " + duration.getValue() + " " +  mPeriod.getValue() + " " + mOccurence.getValue() );
 			mBlinkyManager.send("rec start");
 			mRecState.setValue(3);		// 3 == rec preparing
